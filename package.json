@@ -1,0 +1,14 @@
+{
+  "name": "blog",
+  "version": "1.0.0",
+  "description": "Blog app",
+  "main": "app.js",
+  "scripts": {},
+  "keywords": [
+    "blog"
+  ],
+  "author": "Szymon Szyszkowski",
+  "license": "MIT",
+  "devDependencies": {},
+  "dependencies": {}
+}
