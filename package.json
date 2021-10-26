@@ -18,6 +18,8 @@
   ],
   "browser": "src/Client-Layer/index.js",
   "devDependencies": {
+    "@babel/core": "^7.15.8",
+    "babel-loader": "^8.2.3",
     "cross-env": "^7.0.3",
     "html-webpack-plugin": "^5.5.0",
     "webpack": "^5.60.0",
