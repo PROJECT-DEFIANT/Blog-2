@@ -2,17 +2,24 @@
   "name": "blog",
   "version": "1.0.0",
   "description": "Blog app",
-  "main": "app.js",
-  "scripts": {},
+  "main": "main.js",
+  "scripts": {
+    "dev": "webpack",
+    "prod": "cross-env NODE_ENV_MODE=production webpack"
+  },
   "keywords": [
     "blog"
   ],
   "author": "Szymon Szyszkowski",
   "license": "MIT",
+  "browserlist": [
+    "defaults"
+  ],
+  "browser": "src/Client-Layer/index.js",
   "devDependencies": {
+    "cross-env": "^7.0.3",
     "webpack": "^5.60.0",
     "webpack-cli": "^4.9.1",
     "webpack-dev-server": "^4.3.1"
-  },
-  "dependencies": {}
+  }
 }
