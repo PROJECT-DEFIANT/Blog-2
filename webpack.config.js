@@ -1,5 +1,6 @@
 const path = require("path");
-
+// const HtmlWebpackPluginConfig = require(".Project-config/HtmlWebpackPlugin.config");
+const HtmlWebpackPlugin = require("html-webpack-plugin");
 module.exports = () => {
   return {
     /* NODE_ENV_MODE is set in the production script for the production, if not set than  use  developments
@@ -13,11 +14,11 @@ module.exports = () => {
     */
     entry: {
       Admin: {
-        import: "./src/Client-Layer/Admin-Layer/app.js",
+        import: "./src/Client-Layer/Admin-Layer/index.js",
         filename: "./Client-Layer/Admin-Layer/[name].js",
       },
       Blog: {
-        import: "./src/Client-Layer/Blog-Layer/app.js",
+        import: "./src/Client-Layer/Blog-Layer/index.js",
         filename: "./Client-Layer/Blog-Layer/[name].js",
       },
     },
@@ -29,5 +30,6 @@ module.exports = () => {
           ? path.resolve(__dirname, "Prod")
           : path.resolve(__dirname, "Dist"),
     },
+    plugins: [new HtmlWebpackPlugin()],
   };
 };
