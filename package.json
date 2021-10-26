@@ -9,6 +9,10 @@
   ],
   "author": "Szymon Szyszkowski",
   "license": "MIT",
-  "devDependencies": {},
+  "devDependencies": {
+    "webpack": "^5.60.0",
+    "webpack-cli": "^4.9.1",
+    "webpack-dev-server": "^4.3.1"
+  },
   "dependencies": {}
 }
