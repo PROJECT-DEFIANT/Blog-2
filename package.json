@@ -4,8 +4,9 @@
   "description": "Blog app",
   "main": "main.js",
   "scripts": {
-    "dev": "webpack",
-    "prod": "cross-env NODE_ENV_MODE=production webpack"
+    "dev": "cross-env NODE_ENV_MODE=development webpack",
+    "prod": "cross-env NODE_ENV_MODE=production webpack",
+    "clear": "rm -r Dist && rm -r Prod"
   },
   "keywords": [
     "blog"
