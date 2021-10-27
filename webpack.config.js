@@ -1,6 +1,7 @@
 const path = require("path");
 // const HtmlWebpackPluginConfig = require(".Project-config/HtmlWebpackPlugin.config");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
+
 module.exports = () => {
   return {
     /* NODE_ENV_MODE is set in the production script for the production, if not set than  use  developments
@@ -29,6 +30,20 @@ module.exports = () => {
         process.env.NODE_ENV_MODE === "production"
           ? path.resolve(__dirname, "Prod")
           : path.resolve(__dirname, "Dist"),
+    },
+    module: {
+      rules: [
+        {
+          test: /\.m?js$/,
+          exclude: path.resolve("./node_modules"),
+          use: {
+            loader: "babel-loader",
+            options: {
+              presets: ["@babel/preset-env", "@babel/preset-react"],
+            },
+          },
+        },
+      ],
     },
     plugins: [new HtmlWebpackPlugin()],
   };
