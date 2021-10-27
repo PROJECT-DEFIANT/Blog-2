@@ -45,6 +45,19 @@ module.exports = () => {
         },
       ],
     },
-    plugins: [new HtmlWebpackPlugin()],
+    plugins: [
+      new HtmlWebpackPlugin({
+        filename: "Client-Layer/Admin-Layer/index.html",
+        template: "./src/Client-Layer/Templates/index.html",
+        title: "admin-panel",
+        chunks: ["Admin"],
+      }),
+      new HtmlWebpackPlugin({
+        filename: "Client-Layer/Blog-Layer/index.html",
+        template: "./src/Client-Layer/Templates/index.html",
+        title: "project-defiant",
+        chunks: ["Blog"],
+      }),
+    ],
   };
 };
