@@ -1,7 +1,5 @@
 const path = require("path");
-// const HtmlWebpackPluginConfig = require(".Project-config/HtmlWebpackPlugin.config");
-const HtmlWebpackPlugin = require("html-webpack-plugin");
-
+const HtmlWebpackPluginConfig = require("./Project-config/HtmlWebpackPlugin.config");
 module.exports = () => {
   return {
     /* NODE_ENV_MODE is set in the production script for the production, if not set than  use  developments
@@ -45,19 +43,6 @@ module.exports = () => {
         },
       ],
     },
-    plugins: [
-      new HtmlWebpackPlugin({
-        filename: "Client-Layer/Admin-Layer/index.html",
-        template: "./src/Client-Layer/Templates/index.html",
-        title: "admin-panel",
-        chunks: ["Admin"],
-      }),
-      new HtmlWebpackPlugin({
-        filename: "Client-Layer/Blog-Layer/index.html",
-        template: "./src/Client-Layer/Templates/index.html",
-        title: "project-defiant",
-        chunks: ["Blog"],
-      }),
-    ],
+    plugins: HtmlWebpackPluginConfig,
   };
 };
