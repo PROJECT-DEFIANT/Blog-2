@@ -1,5 +1,11 @@
 const path = require("path");
-const HtmlWebpackPluginConfig = require("./Project-config/HtmlWebpackPlugin.config");
+const HtmlWebpackPlugin = require("html-webpack-plugin");
+
+const {
+  AdminConfig,
+  BlogConfig,
+} = require("./Project-config/HtmlWebpackPlugin.config");
+
 module.exports = () => {
   return {
     /* NODE_ENV_MODE is set in the production script for the production, if not set than  use  developments
@@ -43,6 +49,9 @@ module.exports = () => {
         },
       ],
     },
-    plugins: HtmlWebpackPluginConfig,
+    plugins: [
+      new HtmlWebpackPlugin(AdminConfig),
+      new HtmlWebpackPlugin(BlogConfig),
+    ],
   };
 };
